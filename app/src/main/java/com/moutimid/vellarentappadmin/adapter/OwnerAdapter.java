@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.fxn.stash.Stash;
 import com.moutimid.vellarentappadmin.R;
 import com.moutimid.vellarentappadmin.activities.AddVillaActivity;
 import com.moutimid.vellarentappadmin.model.Owner;
@@ -42,7 +43,9 @@ public class OwnerAdapter extends RecyclerView.Adapter<OwnerAdapter.OwnerViewHol
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(context, AddVillaActivity.class);
-                intent.putExtra("id", owner.getOwnerId());
+                Stash.put("id", owner.getOwnerId());
+                Stash.put("name", owner.getName());
+                Stash.put("image", owner.getImage());
                 context.startActivity(intent);
             }
         });

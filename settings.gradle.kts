@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SurveyAppAdmin"
+rootProject.name = "VellaRentAppAdmin"
 include(":app")

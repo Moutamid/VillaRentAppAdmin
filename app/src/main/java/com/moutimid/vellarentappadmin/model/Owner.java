@@ -3,10 +3,20 @@ public class Owner {
     private String name;
     private String phone;
     private String email;
-    private String ownerId; // Assuming you want to store some unique identifier for the owner
+    private String image;
+    private String ownerId;
+    // Assuming you want to store some unique identifier for the owner
 
     // Default constructor required for DataSnapshot.getValue(Owner.class)
     public Owner() {
+    }
+
+    public Owner(String name, String phone, String email, String image, String ownerId) {
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.image = image;
+        this.ownerId = ownerId;
     }
 
     public Owner(String name, String phone, String email, String ownerId) {
@@ -48,5 +58,13 @@ public class Owner {
 
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

@@ -5,18 +5,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="BackPress"
+        android:fontFamily="@font/lexend_semi_bold"
+        android:text="Admin Panel"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:textSize="32dp" />
     <Button
         android:id="@+id/btnAddOwner"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="90dp"
         android:text="Add Owner" />
 
     <Button
         android:id="@+id/btnViewOwners"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/btnAddOwner"
         android:layout_centerHorizontal="true"

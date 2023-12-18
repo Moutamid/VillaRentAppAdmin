@@ -1,37 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string-array name="locations">
-        <item>Location 1</item>
-        <item>Location 2</item>
-        <!-- Add more locations as needed -->
+    <string-array name="room_types">
+        <item>0</item>
+        <item>1</item>
     </string-array>
-
-    <string-array name="bedrooms">
-        <item>1 Bedroom</item>
-        <item>2 Bedrooms</item>
-        <item>3 Bedrooms</item>
-        <!-- Add more bedroom options as needed -->
+    <string-array name="full_bathroom_options">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
     </string-array>
-
-    <string-array name="bathrooms">
-        <item>1 Bathroom</item>
-        <item>2 Bathrooms</item>
-        <item>3 Bathrooms</item>
-        <!-- Add more bathroom options as needed -->
+    <string-array name="steam_shower_options">
+        <item>0</item>
+        <item>1</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
     </string-array>
-
-    <string-array name="pool_sizes">
-        <item>Small</item>
-        <item>Medium</item>
-        <item>Large</item>
-        <!-- Add more pool size options as needed -->
+    <string-array name="toilet_options">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
     </string-array>
-
-    <string-array name="pool_types">
-        <item>Indoor</item>
-        <item>Outdoor</item>
-        <item>Infinity</item>
-        <!-- Add more pool type options as needed -->
-    </string-array>
-    <!-- Add more arrays as needed -->
 </resources>

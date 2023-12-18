@@ -1,188 +1,368 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".UI.AddCatogry">
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-            <ImageView
-                android:layout_width="26dp"
-                android:layout_height="26dp"
-                android:layout_marginLeft="17dp"
-                android:layout_marginTop="29dp"
-                android:onClick="backPress"
-
-                android:src="@drawable/baseline_arrow_back_ios_new_24" />
-
-            <TextView
-                android:id="@+id/PageTitle"
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="67dp"
-                android:layout_marginTop="17dp"
-                android:fontFamily="@font/lexend_semi_bold"
-                android:gravity="left"
-                android:text="Add new product"
-                android:textColor="#000"
-                android:textSize="30dp" />
-
-
-        </RelativeLayout>
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+android:onClick="BackPress"
+            android:drawableStart="@drawable/ic_back"
+            android:fontFamily="@font/lexend_semi_bold"
+            android:text="    Add Villa"
+            android:textSize="28dp" />
 
         <ImageView
-            android:id="@+id/CatogryImage"
-            android:layout_width="200dp"
+            android:id="@+id/image_view"
+            android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_60sdp"
-
-            android:src="@drawable/defualt_image"
-            app:layout_constraintDimensionRatio="1:1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnChooseCatogryImage"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:text="Choose Image"
-            android:background="@color/black"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
-            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            android:layout_margin="20dp"
+            android:scaleType="fitCenter"
+            android:onClick="profile_image"
+            android:src="@drawable/defualt_image" />
 
         <EditText
-            android:id="@+id/editTextName"
+            android:id="@+id/name_edit_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="25dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/edit_bg"
-            android:fontFamily="@font/poppins_regular"
-            android:hint="Enter Product Name"
-            android:padding="12dp"
-            android:textColor="@color/textColor"
-            android:textColorHint="@color/textColor"
-            android:textSize="15dp" />
-
-        <EditText
-            android:id="@+id/editTextDescription"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/edit_bg"
-            android:fontFamily="@font/poppins_regular"
-            android:gravity="start"
-            android:hint="Enter Discription"
-            android:minHeight="@dimen/_120sdp"
-            android:padding="12dp"
-            android:textColor="@color/textColor"
-            android:textColorHint="@color/textColor"
-            android:textSize="15dp" />
-
-        <EditText
-            android:id="@+id/editTextPrice"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/edit_bg"
-            android:fontFamily="@font/poppins_regular"
-            android:hint="Enter Price in Dollars"
-            android:padding="12dp"
-            android:inputType="numberDecimal"
-
-            android:textColor="@color/textColor"
-            android:textColorHint="@color/textColor"
-            android:textSize="15dp" />
-
-        <EditText
-            android:id="@+id/editTextAvailableAmount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/edit_bg"
-            android:fontFamily="@font/poppins_regular"
-            android:hint="Enter Available Amount"
-            android:inputType="number"
-            android:padding="12dp"
-            android:textColor="@color/textColor"
-            android:textColorHint="@color/textColor"
-            android:textSize="15dp" />
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            >
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="29dp"
-                android:layout_marginLeft="29dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="24dp"
-                android:text="Select any Category"
-                android:fontFamily="@font/lexend_medium"
-                android:textColor="@color/black"
-                android:layout_marginRight="24dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                />        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="24dp"
-            android:layout_marginRight="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:padding="10dp"
+            android:hint="@string/property_name"
             />
 
-        </RelativeLayout>
+        <EditText
+            android:id="@+id/description_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_bg"
+
+            android:hint="@string/property_description"
+            android:inputType="textMultiLine"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/area_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_bg"
+
+            android:hint="@string/property_area"
+            android:inputType="number"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/bedroom_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_bg"
+
+            android:hint="@string/bedroom"
+            android:inputType="number"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/bathroom_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_bg"
+
+            android:hint="@string/bathroom"
+            android:inputType="number"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/lat_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_bg"
+
+            android:hint="@string/latitude"
+            android:inputType="numberDecimal"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/lng_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_bg"
+
+            android:hint="@string/longitude"
+            android:inputType="numberDecimal"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/location_title_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_bg"
+
+            android:hint="@string/location_title"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/bill_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/edit_bg"
+
+            android:hint="@string/bill"
+            android:inputType="number"
+            android:padding="10dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_semi_bold"
+                android:text="House Rules"
+                android:textSize="18dp" />
+
+            <CheckBox
+                android:id="@+id/pet_friendly_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/pet_friendly" />
+
+            <CheckBox
+                android:id="@+id/smoker_friendly_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/smoker_friendly" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_semi_bold"
+                android:text="Billing"
+                android:textSize="18dp" />
+
+            <CheckBox
+                android:id="@+id/bills_included_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bills_included" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lexend_semi_bold"
+                android:text="Property Ameneties"
+                android:textSize="18dp" />
+
+            <CheckBox
+                android:id="@+id/air_conditioning_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/air_conditioning" />
+
+            <CheckBox
+                android:id="@+id/dryer_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="@string/dryer" />
+
+            <CheckBox
+                android:id="@+id/kitchen_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Kitchen" />
+
+            <CheckBox
+                android:id="@+id/furnished_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Furnished" />
+
+            <CheckBox
+                android:id="@+id/garden_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Garden" />
+
+            <CheckBox
+                android:id="@+id/heating_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Heating" />
+
+            <CheckBox
+                android:id="@+id/parking_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Parking" />
+
+            <CheckBox
+                android:id="@+id/tv_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="TV" />
+
+            <CheckBox
+                android:id="@+id/washing_machine_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Washing Machine" />
+
+            <CheckBox
+                android:id="@+id/wifi_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="WIFI" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/lexend_semi_bold"
+                android:text="Property Detais"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/lexend_medium"
+                android:text="Bathroom Details"
+                android:textColor="@color/black"
+                android:textSize="17dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/lexend_medium"
+                android:text="Full bathroom"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <Spinner
+                android:id="@+id/full_bathroom_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/full_bathroom_options" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/lexend_medium"
+                android:text="Steam shower"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <Spinner
+                android:id="@+id/steam_shower_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/steam_shower_options" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/lexend_medium"
+                android:text="Toilet"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <Spinner
+                android:id="@+id/toilet_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/toilet_options" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/lexend_medium"
+            android:text="Bedroom Details"
+            android:textColor="@color/black"
+            android:textSize="17dp" />
+
+        <Spinner
+            android:id="@+id/room_type_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="1dp"
+            android:entries="@array/room_types" />
 
         <Button
-            android:id="@+id/btnAddCatogry"
+            android:id="@+id/btnAddOwner"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="25dp"
-            android:background="@drawable/btn_bg"
-            android:fontFamily="@font/poppins_regular"
-            android:text="Add Product"
-            android:textAllCaps="false"
-            android:layout_marginBottom="@dimen/_20sdp"
-            android:textColor="@color/white" />
-
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_margin="30dp"
+            android:text="Add Villa" />
 
     </LinearLayout>
-
 
 </ScrollView>
