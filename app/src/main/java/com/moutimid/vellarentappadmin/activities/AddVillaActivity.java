@@ -189,14 +189,6 @@ public class AddVillaActivity extends AppCompatActivity {
                 propertyAmenities.washingMachine = washingMachineCheckbox.isChecked();
                 propertyAmenities.wifi = wifiCheckbox.isChecked();
 
-//// Set the property details
-                VillaDetails propertyDetails = new VillaDetails();
-                propertyDetails.bathroom = new Bathroom();
-                propertyDetails.bathroom.fullBathroom = Integer.parseInt(fullBathroomSpinner.getSelectedItem().toString());
-                propertyDetails.bathroom.steamShower = Integer.parseInt(steamShowerSpinner.getSelectedItem().toString());
-                propertyDetails.bathroom.toilet = Integer.parseInt(toiletSpinner.getSelectedItem().toString());
-                propertyDetails.bedroom = new Bedroom();
-                propertyDetails.bedroom.type = Integer.parseInt(roomTypeSpinner.getSelectedItem().toString());
 
 // Store the property data in Firebase Realtime Database
                 Dialog lodingbar = new Dialog(AddVillaActivity.this);
@@ -221,12 +213,14 @@ public class AddVillaActivity extends AppCompatActivity {
                             property.image = downloadImageUri.toString();
                             property.userImage = Stash.getString("image");
                             property.userName = Stash.getString("name");
+                            property.ownerID = Stash.getString("id");
+                            property.available = "not_available";
+                            property.available_dates = "";
                             DatabaseReference propertyRef = database.getReference("RentApp").child("Villas");
                             String propertyKey = propertyRef.push().getKey();
                             property.key = propertyKey;
                             propertyRef.child(propertyKey).setValue(property);
 
-                            propertyRef.child(propertyKey).child("PropertyDetails").setValue(propertyDetails);
                             propertyRef.child(propertyKey).child("PropertyAmenities").setValue(propertyAmenities);
                             propertyRef.child(propertyKey).child("HouseRules").setValue(houseRules).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override

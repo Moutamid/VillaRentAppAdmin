@@ -16,7 +16,10 @@ public class Property {
     public String title;
     public String userImage;
     public String userName;
+    public String ownerID;
 
+    public String available;
+    public String available_dates;
 
     public int getArea() {
         return area;
@@ -138,7 +141,22 @@ public class Property {
         this.userName = userName;
     }
 
-    // Constructor, getters, and setters
+    public String getOwnerID() {
+        return ownerID;
+    }
+
+    public void setOwnerID(String ownerID) {
+        this.ownerID = ownerID;
+    }
+
+    public String getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(String available) {
+        this.available = available;
+    }
+// Constructor, getters, and setters
 }
 
 

@@ -1,5 +1,7 @@
 package com.moutimid.vellarentappadmin.activities;
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,7 +30,7 @@ public class OwnersListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_owners_list);
 
-        ownersRef = FirebaseDatabase.getInstance().getReference("owners");
+        ownersRef = FirebaseDatabase.getInstance().getReference("RentApp").child("Owners");
 
         recyclerViewOwners = findViewById(R.id.recyclerViewOwners);
         recyclerViewOwners.setLayoutManager(new LinearLayoutManager(this));
@@ -54,5 +56,9 @@ public class OwnersListActivity extends AppCompatActivity {
                 // Handle error
             }
         });
+    }
+
+    public void BackPress(View view) {
+        onBackPressed();
     }
 }

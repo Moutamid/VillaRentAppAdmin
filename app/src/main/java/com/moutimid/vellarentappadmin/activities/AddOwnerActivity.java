@@ -49,7 +49,7 @@ public class AddOwnerActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        ownersRef = FirebaseDatabase.getInstance().getReference("owners");
+        ownersRef = FirebaseDatabase.getInstance().getReference("RentApp").child("Owners");
 
         editTextName = findViewById(R.id.editTextName);
         editTextPhone = findViewById(R.id.editTextPhone);
@@ -70,44 +70,47 @@ public class AddOwnerActivity extends AppCompatActivity {
         String phone = editTextPhone.getText().toString().trim();
         String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
-
-        mAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, task -> {
-                    if (task.isSuccessful()) {
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        if (user != null) {
-                            Dialog lodingbar = new Dialog(AddOwnerActivity.this);
-                            lodingbar.setContentView(R.layout.loading);
-                            Objects.requireNonNull(lodingbar.getWindow()).setBackgroundDrawable(new ColorDrawable(UCharacter.JoiningType.TRANSPARENT));
-                            lodingbar.setCancelable(false);
-                            lodingbar.show();
-                            String filePathName = "villas/";
-                            final String timestamp = "" + System.currentTimeMillis();
-                            StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathName + timestamp);
-                            UploadTask urlTask = storageReference.putFile(image_profile_str);
-                            Task<Uri> uriTask = urlTask.continueWithTask(task1 -> {
-                                if (!task1.isSuccessful()) {
-                                    Toast.makeText(AddOwnerActivity.this, task1.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                }
-                                return storageReference.getDownloadUrl();
-                            }).addOnCompleteListener(task2 -> {
-                                if (task2.isSuccessful()) {
-                                    Uri downloadImageUri = task2.getResult();
-                                    if (downloadImageUri != null) {
-                                        // Create Owner object and push to Firebase Realtime Database
-                                        Owner owner = new Owner(name, phone, email, downloadImageUri.toString(), user.getUid());
-                                        ownersRef.push().setValue(owner);
-
-                                        Toast.makeText(AddOwnerActivity.this, "Owner added successfully", Toast.LENGTH_SHORT).show();
-                                        finish();
+        if (name.isEmpty() || phone.isEmpty() || email.isEmpty() || password.isEmpty() || image_profile_str.equals(null)) {
+            Toast.makeText(this, "Please give complete details", Toast.LENGTH_SHORT).show();
+        } else {
+            mAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, task -> {
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            if (user != null) {
+                                Dialog lodingbar = new Dialog(AddOwnerActivity.this);
+                                lodingbar.setContentView(R.layout.loading);
+                                Objects.requireNonNull(lodingbar.getWindow()).setBackgroundDrawable(new ColorDrawable(UCharacter.JoiningType.TRANSPARENT));
+                                lodingbar.setCancelable(false);
+                                lodingbar.show();
+                                String filePathName = "villas/";
+                                final String timestamp = "" + System.currentTimeMillis();
+                                StorageReference storageReference = FirebaseStorage.getInstance().getReference(filePathName + timestamp);
+                                UploadTask urlTask = storageReference.putFile(image_profile_str);
+                                Task<Uri> uriTask = urlTask.continueWithTask(task1 -> {
+                                    if (!task1.isSuccessful()) {
+                                        Toast.makeText(AddOwnerActivity.this, task1.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                     }
-                                } else {
-                                    Toast.makeText(AddOwnerActivity.this, "Failed to add owner", Toast.LENGTH_SHORT).show();
-                                }
-                            });
+                                    return storageReference.getDownloadUrl();
+                                }).addOnCompleteListener(task2 -> {
+                                    if (task2.isSuccessful()) {
+                                        Uri downloadImageUri = task2.getResult();
+                                        if (downloadImageUri != null) {
+                                            // Create Owner object and push to Firebase Realtime Database
+                                            Owner owner = new Owner(name, phone, email, downloadImageUri.toString(), user.getUid());
+                                            ownersRef.child(user.getUid()).setValue(owner);
+                                            Toast.makeText(AddOwnerActivity.this, "Owner added successfully", Toast.LENGTH_SHORT).show();
+                                            finish();
+                                        }
+                                    } else {
+                                        Toast.makeText(AddOwnerActivity.this, "Failed to add owner", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
+                            }
                         }
-                    }
-                });
+                    });
+        }
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

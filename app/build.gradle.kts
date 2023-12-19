@@ -14,6 +14,8 @@ android {
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+        setProperty("archivesBaseName", "VillaAdminApp-$versionName")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -49,4 +51,6 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:22.3.0")
     implementation("com.fxn769:stash:1.3.2")
     implementation("com.airbnb.android:lottie:3.4.0")
+
+    implementation("com.google.firebase:firebase-messaging:23.0.0")
 }

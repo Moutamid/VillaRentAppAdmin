@@ -280,6 +280,7 @@ android:onClick="BackPress"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/lexend_semi_bold"
                 android:text="Property Detais"
+                android:visibility="gone"
                 android:textSize="18dp" />
 
             <TextView
@@ -289,6 +290,8 @@ android:onClick="BackPress"
                 android:fontFamily="@font/lexend_medium"
                 android:text="Bathroom Details"
                 android:textColor="@color/black"
+                android:visibility="gone"
+
                 android:textSize="17dp" />
 
             <TextView
@@ -298,12 +301,16 @@ android:onClick="BackPress"
                 android:fontFamily="@font/lexend_medium"
                 android:text="Full bathroom"
                 android:textColor="@color/black"
+                android:visibility="gone"
+
                 android:textSize="15dp" />
 
             <Spinner
                 android:id="@+id/full_bathroom_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
+
                 android:entries="@array/full_bathroom_options" />
 
             <TextView
@@ -312,6 +319,8 @@ android:onClick="BackPress"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/lexend_medium"
                 android:text="Steam shower"
+                android:visibility="gone"
+
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
@@ -319,6 +328,8 @@ android:onClick="BackPress"
                 android:id="@+id/steam_shower_spinner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
+
                 android:entries="@array/steam_shower_options" />
 
             <TextView
@@ -327,12 +338,15 @@ android:onClick="BackPress"
                 android:layout_marginTop="15dp"
                 android:fontFamily="@font/lexend_medium"
                 android:text="Toilet"
+                android:visibility="gone"
+
                 android:textColor="@color/black"
                 android:textSize="15dp" />
 
             <Spinner
                 android:id="@+id/toilet_spinner"
                 android:layout_width="match_parent"
+                android:visibility="gone"
                 android:layout_height="wrap_content"
                 android:entries="@array/toilet_options" />
         </LinearLayout>
@@ -345,6 +359,8 @@ android:onClick="BackPress"
             android:fontFamily="@font/lexend_medium"
             android:text="Bedroom Details"
             android:textColor="@color/black"
+            android:visibility="gone"
+
             android:textSize="17dp" />
 
         <Spinner
@@ -353,6 +369,8 @@ android:onClick="BackPress"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="1dp"
+            android:visibility="gone"
+
             android:entries="@array/room_types" />
 
         <Button
@@ -361,6 +379,7 @@ android:onClick="BackPress"
             android:layout_height="60dp"
             android:layout_gravity="center"
             android:layout_margin="30dp"
+            android:background="@drawable/edit_bg"
             android:text="Add Villa" />
 
     </LinearLayout>
