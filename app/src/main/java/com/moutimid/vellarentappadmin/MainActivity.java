@@ -23,7 +23,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.messaging.FirebaseMessaging;
 import com.moutimid.vellarentappadmin.activities.AddOwnerActivity;
+import com.moutimid.vellarentappadmin.activities.AllVillaActivity;
 import com.moutimid.vellarentappadmin.activities.OwnersListActivity;
+import com.moutimid.vellarentappadmin.activities.PendingVillaActivity;
 
 import java.util.HashMap;
 
@@ -67,6 +69,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, OwnersListActivity.class));
+            }
+        });
+        findViewById(R.id.btnViewVerified).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, AllVillaActivity.class));
+            }
+        });
+        findViewById(R.id.btnViewPending).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, PendingVillaActivity.class));
             }
         });
     }

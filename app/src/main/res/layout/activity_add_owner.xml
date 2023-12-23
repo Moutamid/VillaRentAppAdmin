@@ -14,12 +14,14 @@
         android:drawableStart="@drawable/ic_back"
         android:fontFamily="@font/lexend_semi_bold"
         android:text="    Add Owner"
+        android:textColor="@color/black"
         android:textSize="28dp" />
     <ImageView
         android:id="@+id/image_view"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:layout_margin="20dp"
+        android:visibility="gone"
         android:scaleType="fitCenter"
         android:onClick="profile_image"
         android:src="@drawable/defualt_image" />
@@ -29,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="48dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/edit_bg"
         android:padding="10dp"

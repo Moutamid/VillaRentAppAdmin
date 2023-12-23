@@ -1,155 +1,143 @@
 package com.moutimid.vellarentappadmin.model;
 
 public class Villa {
-    private String location;
-    private String bedrooms;
-    private String bathrooms;
-    private String poolSize;
-    private String poolType;
-    private String villaName;
-    private String city;
-    private String neighborhood;
-    private String country;
+    private HouseRules houseRules;
+    private Location location;
+    private PropertyAmenities propertyAmenities;
+    private PropertyDetails propertyDetails;
+    private int area;
+    private int bathRoom;
+    private int bedroom;
     private String description;
-    private String rentalPrice;
-    private String securityDeposit;
-    private String checkInOutTimes;
-    private String cancellationPolicy;
+    private String name;
+    private int roomType;
+    private int bill;
+    public int no_of_persons;
+    boolean bills_included;
+    String image, userImage, userName;
+    String key;
+    private double lat;
+    private double lng;
+    private String title;
 
-    // Empty constructor for Firebase
+    public String available;
+    public String available_dates;
+    // Default constructor for Firebase
+
+    public double distance;
+    public boolean verified;
+
     public Villa() {
     }
 
-    public Villa(String location, String bedrooms, String bathrooms, String poolSize, String poolType,
-                 String villaName, String city, String neighborhood, String country, String description,
-                 String rentalPrice, String securityDeposit, String checkInOutTimes, String cancellationPolicy) {
-        this.location = location;
-        this.bedrooms = bedrooms;
-        this.bathrooms = bathrooms;
-        this.poolSize = poolSize;
-        this.poolType = poolType;
-        this.villaName = villaName;
-        this.city = city;
-        this.neighborhood = neighborhood;
-        this.country = country;
-        this.description = description;
-        this.rentalPrice = rentalPrice;
-        this.securityDeposit = securityDeposit;
-        this.checkInOutTimes = checkInOutTimes;
-        this.cancellationPolicy = cancellationPolicy;
+    public Villa(double lat, double lng, String title) {
+        this.lat = lat;
+        this.lng = lng;
+        this.title = title;
     }
 
-    // Add getters and setters as needed
+    public HouseRules getHouseRules() {
+        return houseRules;
+    }
 
-    public String getLocation() {
+    public Location getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public PropertyAmenities getPropertyAmenities() {
+        return propertyAmenities;
     }
 
-    public String getBedrooms() {
-        return bedrooms;
+    public PropertyDetails getPropertyDetails() {
+        return propertyDetails;
     }
 
-    public void setBedrooms(String bedrooms) {
-        this.bedrooms = bedrooms;
+    public int getArea() {
+        return area;
     }
 
-    public String getBathrooms() {
-        return bathrooms;
+    public int getBathRoom() {
+        return bathRoom;
     }
 
-    public void setBathrooms(String bathrooms) {
-        this.bathrooms = bathrooms;
-    }
-
-    public String getPoolSize() {
-        return poolSize;
-    }
-
-    public void setPoolSize(String poolSize) {
-        this.poolSize = poolSize;
-    }
-
-    public String getPoolType() {
-        return poolType;
-    }
-
-    public void setPoolType(String poolType) {
-        this.poolType = poolType;
-    }
-
-    public String getVillaName() {
-        return villaName;
-    }
-
-    public void setVillaName(String villaName) {
-        this.villaName = villaName;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getNeighborhood() {
-        return neighborhood;
-    }
-
-    public void setNeighborhood(String neighborhood) {
-        this.neighborhood = neighborhood;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
+    public int getBedroom() {
+        return bedroom;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public String getName() {
+        return name;
     }
 
-    public String getRentalPrice() {
-        return rentalPrice;
+    public int getRoomType() {
+        return roomType;
     }
 
-    public void setRentalPrice(String rentalPrice) {
-        this.rentalPrice = rentalPrice;
+    public String getImage() {
+        return image;
     }
 
-    public String getSecurityDeposit() {
-        return securityDeposit;
+    public int getBill() {
+        return bill;
     }
 
-    public void setSecurityDeposit(String securityDeposit) {
-        this.securityDeposit = securityDeposit;
+    public boolean isBills_included() {
+        return bills_included;
     }
 
-    public String getCheckInOutTimes() {
-        return checkInOutTimes;
+    public String getUserImage() {
+
+        return userImage;
     }
 
-    public void setCheckInOutTimes(String checkInOutTimes) {
-        this.checkInOutTimes = checkInOutTimes;
+    public String getUserName() {
+        return userName;
     }
 
-    public String getCancellationPolicy() {
-        return cancellationPolicy;
+    public String getKey() {
+        return key;
     }
 
-    public void setCancellationPolicy(String cancellationPolicy) {
-        this.cancellationPolicy = cancellationPolicy;
+    public double getLat() {
+        return lat;
+    }
+
+    public double getLng() {
+        return lng;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setHouseRules(HouseRules houseRules) {
+        this.houseRules = houseRules;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public void setPropertyAmenities(PropertyAmenities propertyAmenities) {
+        this.propertyAmenities = propertyAmenities;
+    }
+
+    public void setPropertyDetails(PropertyDetails propertyDetails) {
+        this.propertyDetails = propertyDetails;
+    }
+
+    public double getDistance() {
+        return distance;
+    }
+
+    public void setDistance(double distance) {
+        this.distance = distance;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

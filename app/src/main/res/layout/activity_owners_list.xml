@@ -13,6 +13,8 @@
         android:drawableStart="@drawable/ic_back"
         android:fontFamily="@font/lexend_semi_bold"
         android:text="    All Owners"
+        android:textColor="@color/black"
+
         android:textSize="28dp" />
 
     <androidx.recyclerview.widget.RecyclerView

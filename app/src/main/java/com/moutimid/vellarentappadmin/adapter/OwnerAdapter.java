@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.fxn.stash.Stash;
 import com.moutimid.vellarentappadmin.R;
-import com.moutimid.vellarentappadmin.activities.AddVillaActivity;
+import com.moutimid.vellarentappadmin.activities.AllVillaActivity;
 import com.moutimid.vellarentappadmin.model.Owner;
 
 import java.util.List;
@@ -39,16 +39,16 @@ public class OwnerAdapter extends RecyclerView.Adapter<OwnerAdapter.OwnerViewHol
     public void onBindViewHolder(@NonNull OwnerViewHolder holder, int position) {
         Owner owner = owners.get(position);
         holder.bind(owner);
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent= new Intent(context, AddVillaActivity.class);
-                Stash.put("id", owner.getOwnerId());
-                Stash.put("name", owner.getName());
-                Stash.put("image", owner.getImage());
-                context.startActivity(intent);
-            }
-        });
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent= new Intent(context, AllVillaActivity.class);
+//                Stash.put("id", owner.getOwnerId());
+//                Stash.put("name", owner.getName());
+//                Stash.put("image", owner.getImage());
+//                context.startActivity(intent);
+//            }
+//        });
     }
 
     @Override

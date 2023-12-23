@@ -40,7 +40,9 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Objects;
 
 public class Config extends Activity {
@@ -48,10 +50,19 @@ public class Config extends Activity {
     public static final String YEAR_FORMAT = "yyyy";
     public static final String TIME = "hh:mm aa";
     public static final String DATE = "dd MMM";
+    public static String favourite = "Favourite";
+    public static String villa = "Villas";
+    public static String currentModel = "CurrentModel";
     public static Dialog lodingbar;
+    public static String SERVER_KEY="AAAAFp-OyHA:APA91bGndaKxmUVhoqvOGw6N2bA079pgW-6kiRcfvsb2-9Iw6tiW4aAnIGVZI4eb22uF3qzhOthzmQocVlhHb4wkRvPiqCC2OS_DWKYehZzNf3mL6Qztn4keRM09CiSn4JsrFn6TmA0e";
+    public static  String NOTIFICATIONAPIURL="https://fcm.googleapis.com/fcm/send";
+    public  static double lat;
+    public  static double lng;
+
     public static void alertDialogue(final Activity context, String message, boolean finish) {
+
         new AlertDialog.Builder(context)
-                .setTitle("Survey App")
+                .setTitle("Vella Rent App")
                 .setMessage(message)
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -275,7 +286,7 @@ public class Config extends Activity {
     }
 
     public static void showProgressDialog(Context context) {
-    Dialog    lodingbar = new Dialog(context);
+        Dialog    lodingbar = new Dialog(context);
         lodingbar.setContentView(R.layout.loading);
         Objects.requireNonNull(lodingbar.getWindow()).setBackgroundDrawable(new ColorDrawable(UCharacter.JoiningType.TRANSPARENT));
         lodingbar.setCancelable(false);
@@ -298,12 +309,12 @@ public class Config extends Activity {
         return new SimpleDateFormat(YEAR_FORMAT, Locale.getDefault()).format(date);
     }
 
-   public static String getDate(long date) {
+    public static String getDate(long date) {
         return new SimpleDateFormat(DATE, Locale.getDefault()).format(date);
     }
 
-   public static void checkApp(Activity activity) {
-        String appName = "Survey App";
+    public static void checkApp(Activity activity) {
+        String appName = "RentApp";
 
         new Thread(() -> {
             URL google = null;

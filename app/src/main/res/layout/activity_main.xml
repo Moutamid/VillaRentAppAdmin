@@ -33,6 +33,25 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/edit_bg"
         android:text="View Owners" />
+  <Button
+        android:id="@+id/btnViewPending"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnViewOwners"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_bg"
+        android:text="Verification Pending" />
+
+    <Button
+        android:id="@+id/btnViewVerified"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnViewPending"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_bg"
+        android:text="Verified Villas" />
 
     <!-- Add other UI elements as needed -->
 
